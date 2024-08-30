@@ -3,6 +3,27 @@ import dataclasses
 
 @dataclasses.dataclass
 class TruncatedTriangleDistribution:
+    """
+    A class holding the variables of the truncated triangular distribution.
+
+
+        lower_truncation        upper_truncation
+
+                 │     ┌┬┐              │
+                 │   ┌─┘│└──┐           │
+                 │ ┌─┘  │   └──┐        │
+                 ├─┘    │      └──┐     │
+               ┌─┤      │         └──┐  │
+             ┌─┘ │      │            └──┤
+           ┌─┘   │      │               ├──┐
+    ───────┴─────┼──────┼───────────────┼──┴─────
+         lower   │    middle            │ upper
+
+    As you can see from the above beautiful diagram: "lower" is the lower limit
+    of the distribution, middle is the mode, and upper is the upper limit.
+    Hopefully the lower and upper truncation values are self-explanatory.
+    """
+
     lower: float
     middle: float
     upper: float
@@ -41,6 +62,12 @@ class TruncatedTriangleDistribution:
         lower_truncation: float | None = None,
         upper_truncation: float | None = None,
     ) -> "TruncatedTriangleDistribution":
+        """
+        Allows use you create TruncatedTriangleDistribution objects using the
+        standardized SciPy form, with c, loc, and scale instead of lower,
+        middle and upper. To see what these mean, consult the scipy.triang
+        documentation.
+        """
         if c < 0 or c > 1:
             raise ValueError('"c" should be 0 <= c <= 1')
 
@@ -68,6 +95,10 @@ class TruncatedTriangleDistribution:
 
     @property
     def mean(self) -> float:
+        """
+        Returns the mean of the truncated triangular distribution.
+        """
+
         # Snap truncation values to lower/upper if they are outside the range
         # of [lower, upper].
         lower_truncation = max(self.lower_truncation, self.lower)
