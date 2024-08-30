@@ -31,7 +31,7 @@ jobs:
 
       - name: Run Ruff Linter and Fixer
         run: |
-          ruff . --fix
+          ruff check . --fix
 
       - name: Run Ruff Formatter
         run: |
