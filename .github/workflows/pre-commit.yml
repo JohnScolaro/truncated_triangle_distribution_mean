@@ -35,7 +35,7 @@ jobs:
 
       - name: Run Ruff Formatter
         run: |
-          ruff . --format
+          ruff check . --format
 
       - name: Run mypy
         run: |
