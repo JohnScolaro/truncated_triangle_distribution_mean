@@ -18,7 +18,7 @@ jobs:
 
     # Stops CI from running everything twice on a pull request to main.
     if: github.event_name == 'pull_request' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -35,11 +35,11 @@ jobs:
 
       - name: Run Ruff Linter and Fixer
         run: |
-          ruff check . --fix
+          ruff check .
 
       - name: Run Ruff Formatter
         run: |
-          ruff check . --format
+          ruff check .
 
       - name: Run mypy
         run: |
