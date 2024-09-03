@@ -6,6 +6,10 @@ All notable changes to this project will be documented in this file.
 
 - Nothing yet
 
+## v0.1.2 - 2024-09-03
+
+- Added the repository link into the projects.urls section of pyproject.toml so it appears on PyPI.
+
 ## v0.1.1 - 2024-08-30
 
 ### Added
