@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "truncated_triangle_distribution_mean"
-version = "0.1.1"
+version = "0.1.2"
 description = "A small package that calculates the mean of a truncated triangular distribution analytically."
 authors = [
   { name = "John Scolaro", email = "johnscolaro95@gmail.com" }
@@ -20,6 +20,9 @@ classifiers = [
     "Operating System :: OS Independent",
     "Topic :: Scientific/Engineering :: Mathematics"
 ]
+
+[project.urls]
+repository = 'https://github.com/JohnScolaro/truncated_triangle_distribution_mean'
 
 [project.optional-dependencies]
 dev = [
