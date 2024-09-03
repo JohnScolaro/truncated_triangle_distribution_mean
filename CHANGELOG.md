@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 ## Unreleased
 
-- Nothing yet
+- Updated build instructions
 
 ## v0.1.2 - 2024-09-03
 
